@@ -1,5 +1,7 @@
 <%= "#{@game.player1.name} vs. #{@game.player2.name}" %>
 <br>
+<% unless @game.lost? %>
+<% @game.switch_player unless @game.new_game? %>
 <%= "#{@game.player1.name} #{@game.player1.hp}/60hp" %>
 <br>
 <br>
@@ -13,3 +15,6 @@
 </form>
 <br>
 <%= @game.message %>
+<% else %>
+<%= "#{@game.receiver.name} has lost the game." %>
+<% end %>
