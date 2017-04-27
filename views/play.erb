@@ -1,8 +1,8 @@
-<%= "#{@player_1} vs. #{@player_2}" %>
+<%= "#{@game.player_1.name} vs. #{@game.player_2.name}" %>
 <br>
 <br>
 <br>
-<%= "#{@player_2} #{@player_2_hp}/60hp" %>
+<%= "#{@game.player_2.name} #{@game.player_2.hp}/60hp" %>
 <form action="/player-2-attacked" method="post">
   <label for="player_1_attack_1">
     Attack:
