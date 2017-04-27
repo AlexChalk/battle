@@ -11,11 +11,11 @@ class Game
   end
 
   def self.game
-      @game
+    @game
   end
 
   def self.game=(game)
-    @game= game
+    @game = game
   end
 
   def attack

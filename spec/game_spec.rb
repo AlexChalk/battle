@@ -56,5 +56,6 @@ describe Game do
       Game.game= true
       expect(Game.game).to eq(true)
     end
-  end 
+  end
+
 end
