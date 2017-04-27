@@ -2,10 +2,12 @@
 <br>
 <br>
 <br>
-<%= "#{@player_2} 60/60hp" %>
-<form action="/confirmation" method="post">
+<%= "#{@player_2} #{@player_2_hp}/60hp" %>
+<form action="/player-2-attacked" method="post">
   <label for="player_1_attack_1">
     Attack:
     <input type="submit" value="Fire Attack">
   </label>
 </form>
+<br>
+<%= @message %>
