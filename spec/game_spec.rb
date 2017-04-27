@@ -23,7 +23,7 @@ describe Game do
       game.attack
       expect(game.new_game?).to eq(false)
     end
-      
+
   end
 
   describe '#switch_player' do
@@ -44,6 +44,17 @@ describe Game do
       expect(game.lost?).to eq true
     end
   end
-      
 
+  describe '#self.game' do
+    it "gets the value of the class instance variable game" do
+      expect(Game.game).to eq nil
+    end
+  end
+
+  describe '#self.game=' do
+    it "sets the value for the class instance variable game" do
+      Game.game= true
+      expect(Game.game).to eq(true)
+    end
+  end 
 end

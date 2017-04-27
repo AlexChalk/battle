@@ -10,11 +10,21 @@ class Game
     @new_game = true
   end
 
+  def self.game
+      @game
+  end
+
+  def self.game=(game)
+    @game= game
+  end
+
   def attack
     self.new_game = false
     receiver.receive_damage
     self.message = "Your attack was successful!"
   end
+
+
 
   def new_game?
     new_game
