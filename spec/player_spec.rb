@@ -9,11 +9,17 @@ describe Player do
     end
   end
 
+  describe '#hp' do
+    it 'initializes at 60' do
+      expect(player.hp).to eq 60
+    end
+  end
 
 
   describe '#attack' do
     it "takes points from the second player" do
-      expect(player.attack).to eq 
+      expect{ player.attack }.to change{ player.hp }.by(-10)
     end
+  end
 
 end
