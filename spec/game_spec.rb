@@ -16,7 +16,13 @@ describe Game do
   describe '#attack' do
     it "sends the #receive_damage message to the player" do
       expect(player_2).to receive(:receive_damage)
-      game.attack(player_2)
+      game.attack(game.player_2)
+    end
+  end
+
+  describe '#switch_turns' do
+    it "switchies the attack between the players" do
+      expect(@player_1).to
     end
   end
 end
