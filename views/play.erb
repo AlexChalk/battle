@@ -1,13 +1,15 @@
-<%= "#{@game.player_1.name} vs. #{@game.player_2.name}" %>
+<%= "#{@game.player1.name} vs. #{@game.player2.name}" %>
+<br>
+<%= "#{@game.player1.name} #{@game.player1.hp}/60hp" %>
 <br>
 <br>
 <br>
-<%= "#{@game.player_2.name} #{@game.player_2.hp}/60hp" %>
-<form action="/player-2-attacked" method="post">
-  <label for="player_1_attack_1">
+<%= "#{@game.player2.name} #{@game.player2.hp}/60hp" %>
+<form action="/attack" method="post">
+  <label for="attacker_attack_1">
     Attack:
     <input type="submit" value="Fire Attack">
   </label>
 </form>
 <br>
-<%= @message %>
+<%= @game.message %>

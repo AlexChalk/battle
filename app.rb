@@ -18,15 +18,13 @@ class Battle < Sinatra::Base
     redirect '/play'
   end
 
-  post '/player-2-attacked' do
-    $game.attack($game.player_2)
-    $message = "Your attack was successful!"
+  post '/attack' do
+    $game.attack
     redirect '/play'
   end
 
   get '/play' do
     @game = $game
-    @message = $message
     erb(:play)
   end
 
