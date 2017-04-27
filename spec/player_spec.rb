@@ -8,4 +8,12 @@ describe Player do
       expect(player.name).to eq "James"
     end
   end
+
+
+
+  describe '#attack' do
+    it "takes points from the second player" do
+      expect(player.attack).to eq 
+    end
+
 end
