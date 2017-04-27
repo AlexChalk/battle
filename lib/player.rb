@@ -9,6 +9,10 @@ class Player
     @hp = DEFAULT_HP
   end
 
+  def receive_damage
+    self.hp -= 10
+  end
+
   private
   attr_writer :hp
 

@@ -15,5 +15,12 @@ describe Player do
     end
   end
 
+  describe '#receive_damage' do
+    it "takes points from the second player" do
+      expect{ player.receive_damage }.to change{ player.hp }.by(-10)
+    end
+  end
+
+
   
 end
