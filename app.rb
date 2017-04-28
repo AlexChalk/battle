@@ -6,6 +6,8 @@ class Battle < Sinatra::Base
   enable :sessions
   set :session_secret, 'super-secret'
 
+  before { @game = Game.game }
+
   get '/' do
     erb(:index)
   end
@@ -18,12 +20,10 @@ class Battle < Sinatra::Base
   end
 
   post '/attack' do
-    @game = Game.game
     erb(:attack)
   end
 
   get '/play' do
-    @game = Game.game
     erb(:play)
   end
 
