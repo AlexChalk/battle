@@ -1,7 +1,9 @@
 feature 'losing' do
   scenario 'player loses when hp reaches 0' do
     sign_in_and_play
-    11.times { click_on("Fire Attack") }
+    until Game.game.lost? do
+      click_on("Fire Attack")
+    end
     expect(page).to have_content("David has lost the game.")
   end
 end
