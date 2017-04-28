@@ -1,13 +1,12 @@
 
 class Game
-  attr_reader :attacker, :receiver, :player1, :player2, :message, :new_game
+  attr_reader :attacker, :receiver, :player1, :player2, :message
 
   def initialize(player_1, player_2)
     @player1 = player_1
     @player2 = player_2
     @attacker = player_1
     @receiver = player_2
-    @new_game = true
   end
 
   def self.game
@@ -19,15 +18,8 @@ class Game
   end
 
   def attack
-    self.new_game = false
     receiver.receive_damage
-    self.message = "Your attack was successful!"
-  end
-
-
-
-  def new_game?
-    new_game
+    self.message = "#{Game.game.attacker.name} successfully attacked #{Game.game.receiver.name}"
   end
 
   def lost?
@@ -39,6 +31,6 @@ class Game
   end
 
   private
-  attr_writer :attacker, :receiver, :message, :new_game
+  attr_writer :attacker, :receiver, :message
 
 end

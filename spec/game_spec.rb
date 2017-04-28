@@ -9,7 +9,7 @@ describe Game do
   describe '#initialize' do
     it "requires two arguments that are saved to player instances" do
       game = Game.new(player_1, player_2)
-      expect(game).to have_attributes(player1: player_1, player2: player_2, attacker: player_1, receiver: player_2, new_game: true)
+      expect(game).to have_attributes(player1: player_1, player2: player_2, attacker: player_1, receiver: player_2)
     end
   end
 
@@ -19,11 +19,10 @@ describe Game do
       game.attack
     end
 
-    it "sets new_game? to false" do
+    it "sets message to attack message" do
       game.attack
-      expect(game.new_game?).to eq(false)
+      expect(game.message).to eq "Alex successfully attacked David"
     end
-
   end
 
   describe '#switch_player' do

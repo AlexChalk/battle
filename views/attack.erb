@@ -1,0 +1,24 @@
+<%= "#{@game.player1.name} vs. #{@game.player2.name}" %>
+<br>
+<% @game.attack %>
+<%= "#{@game.player1.name} #{@game.player1.hp}/60hp" %>
+<br>
+<br>
+<br>
+<%= "#{@game.player2.name} #{@game.player2.hp}/60hp" %>
+<br>
+<br>
+<%= @game.message %>
+<br>
+<br>
+<% unless @game.lost? %>
+  <form action="/attack" method="post">
+    <label for="attacker_attack_1">
+      Attack:
+      <input type="submit" value="Fire Attack">
+    </label>
+  </form>
+  <% @game.switch_player %>
+<% else %>
+  <%= "#{@game.receiver.name} has lost the game." %>
+<% end %>
