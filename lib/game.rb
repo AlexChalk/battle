@@ -13,13 +13,12 @@ class Game
     @game
   end
 
-  def self.game=(game)
-    @game = game
+  def self.create(player1, player2)
+    @game = Game.new(player1, player2)
   end
 
   def attack
     receiver.receive_damage
-    self.message = "#{Game.game.attacker.name} successfully attacked #{Game.game.receiver.name}"
   end
 
   def lost?

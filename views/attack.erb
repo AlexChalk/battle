@@ -8,7 +8,7 @@
 <%= "#{@game.player2.name} #{@game.player2.hp}/60hp" %>
 <br>
 <br>
-<%= @game.message %>
+<%= "#{@game.attacker.name} successfully attacked #{@game.receiver.name}" %>
 <br>
 <br>
 <% unless @game.lost? %>

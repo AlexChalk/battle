@@ -18,11 +18,6 @@ describe Game do
       expect(player_2).to receive(:receive_damage)
       game.attack
     end
-
-    it "sets message to attack message" do
-      game.attack
-      expect(game.message).to eq "Alex successfully attacked David"
-    end
   end
 
   describe '#switch_player' do
@@ -50,10 +45,15 @@ describe Game do
     end
   end
 
-  describe '#self.game=' do
-    it "sets the value for the class instance variable game" do
-      Game.game= true
-      expect(Game.game).to eq(true)
+  describe '#self.create' do
+    it "sets self.game to an instance of game" do
+      Game.create(player_1, player_2)
+      expect(Game.game).to be_an_instance_of Game
+    end
+
+    it "sets self.game to a new game created with the parameters passed to it" do
+      Game.create(player_1, player_2)
+      expect(Game.game).to have_attributes(:player1 => player_1, :player2 => player_2)
     end
   end
 
