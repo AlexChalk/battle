@@ -45,8 +45,8 @@ describe Game do
   end
 
   describe '#self.game' do
-    it "gets the value of the class instance variable game" do
-      expect(Game.game).to eq nil
+    it "is responded to by game" do
+      expect(Game).to respond_to :game
     end
   end
 
