@@ -20,6 +20,10 @@ class Battle < Sinatra::Base
   end
 
   post '/attack' do
+    redirect '/attacked'
+  end
+
+  get '/attacked' do
     erb(:attack)
   end
 

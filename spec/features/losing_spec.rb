@@ -4,6 +4,6 @@ feature 'losing' do
     until Game.game.lost? do
       click_on("Fire Attack")
     end
-    expect(page).to have_content("David has lost the game.")
+    expect(page).to have_content("has lost the game.")
   end
 end
